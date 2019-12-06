@@ -1,6 +1,5 @@
 package com.daria.travelagency.model;
 
-public enum Role {
-    USER,
-    ADMIN
+public enum Type {
+    BB, HB, FB, AI
 }
