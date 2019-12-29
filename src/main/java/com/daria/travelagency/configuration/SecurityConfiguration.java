@@ -46,7 +46,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/login*", "/registration*", "/thank-you*")
+                .antMatchers("/", "/login*", "/registration*", "/thank-you*", "/trips*")
                 .permitAll()
                 .antMatchers("/admin*")
                 .hasRole("ADMIN")
@@ -62,7 +62,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/")
                 .invalidateHttpSession(true)
-                .deleteCookies("JSESSIONID");
+                .deleteCookies("JSESSIONID")
+                .and()
+                .rememberMe().key("uniqueAndSecret")
+
+        ;
     }
 
     @Bean

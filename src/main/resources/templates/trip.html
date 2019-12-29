@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/head.html :: head(title='trip.page')"></head>
+
+<body>
+<header class="masthead mb-auto"  th:insert="fragments/header.html :: nav"></header>
+<div class="container-fluid d-flex h-100 p-3 mx-auto flex-column justify-content-center">
+    <main role="main" class="inner cover">
+        <div th:insert="fragments/banner.html :: div"></div>
+        <div class="card text-white bg-primary mb-3" style="max-width: 50rem;">
+            <div class="card-header" th:text="${trip.title}">Tytuł</div>
+            <div class="card-body">
+                <h5 class="card-title" th:text="${trip.user.name}">Nazwa użytkownika</h5>
+                <p class="card-text" th:text="${trip.description}">Opis</p>
+            </div>
+        </div>
+        <form th:action="@{/trips}" th:object="${trip}" method="delete">
+            <input type="hidden" th:field="${trip}">Unuń</input>
+            <button type="submit" class="btn btn-danger" onClick="return confirm('Czy jesteś pewny?')"/>
+        </form>
+
+    </main>
+
+</div>
+
+<footer th:replace="fragments/footer.html :: footer"></footer>
+</body>
+</html>

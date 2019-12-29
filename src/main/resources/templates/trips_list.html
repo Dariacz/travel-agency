@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/head.html :: head(title='trips.page')"></head>
+
+<body>
+<header class="masthead mb-auto"  th:insert="fragments/header.html :: nav"></header>
+<div class="container-fluid d-flex h-100 p-3 mx-auto flex-column justify-content-center">
+    <main role="main" class="inner cover">
+        <div th:insert="fragments/banner.html :: div"></div>
+
+
+
+        <div class="list-group">
+            <ul class="list-group list-group-flush">
+                <h5 class="list-title">Lista Wycieczek</h5>
+                <a  th:each="tripView: ${tripViews}"  class="list-group-item list-group-item-action"  th:text="${tripView.title}"  th:href="${'/trip/'+ tripView.id}">
+            </a>
+
+            </ul>
+        </div>
+
+
+<div class="card" style="width: 18rem;">
+        <a class="btn btn-primary" href="/new-trip" role="button">Dodaj nową wycieczkę</a>
+</div>
+
+    </main>
+</div>
+
+<footer th:replace="fragments/footer.html :: footer"></footer>
+</body>
+</html>

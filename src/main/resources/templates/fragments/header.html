@@ -1,7 +1,7 @@
 <header xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
     <div class="inner">
         <nav sec:authorize="isAuthenticated()" class="nav nav-masthead justify-content-end">
-            <a class="nav-link" th:text="#{navigation.trips}" th:href="@{/}"></a>
+            <a class="nav-link" th:text="#{navigation.trips}" th:href="@{/trips}"></a>
             <a class="nav-link" th:text="#{navigation.continents}" th:href="@{/}"></a>
             <a class="nav-link" th:text="#{navigation.promotion}" th:href="@{/}"></a>
             <a class="nav-link" th:text="#{navigation.logout}" th:href="@{/logout}"></a>

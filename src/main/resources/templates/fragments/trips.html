@@ -1,0 +1,5 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div th:each="trip : ${trips}" class="card-body d-flex flex-column align-items-start justify-content-start">
+        <div class="mb-1"><a th:text="${trip.title}" th:href="${'/trip/' + trip.id}"></a> </div>
+    </div>
+</div>

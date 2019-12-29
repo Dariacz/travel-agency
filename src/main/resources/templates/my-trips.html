@@ -1,16 +1,16 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head.html :: head(title='welcome.page')"></head>
+<head th:replace="fragments/head.html :: head(title='trip.page')"></head>
+
 <body>
 <header class="masthead mb-auto"  th:insert="fragments/header.html :: nav"></header>
-<div class="container-fluid d-flex h-100 p-3 mx-auto flex-column">
+<div class="container-fluid d-flex h-100 p-3 mx-auto flex-column justify-content-center">
     <main role="main" class="inner cover">
-        <div th:insert="fragments/banner.html :: div"></div>
-        <h4 th:text="#{welcome.newTrips}"></h4>
+        <h2 th:text="#{trips.mytrips(${trips.getTotalElements()}, ${user.name})}"></h2>
         <div th:insert="fragments/trips.html :: div(trips=${trips})"></div>
-
     </main>
 </div>
+
 <footer th:replace="fragments/footer.html :: footer"></footer>
 </body>
 </html>
