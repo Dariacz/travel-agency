@@ -38,13 +38,13 @@ public class HomeController {
         model.addAttribute("error", error);
         return "login";
     }
-    @GetMapping("/my-trips")
-    public String getMyTrips(Model model) throws AccessDeniedException {
-        var user = securityService.getLoggedInUser();
-        model.addAttribute("trips", tripService.findTripViewsByUserId(user.getId()));
-        model.addAttribute("user", user);
-        return "welcome";
-    }
+//    @GetMapping("/my-trips")
+//    public String getMyTrips(Model model) throws AccessDeniedException {
+//        var user = securityService.getLoggedInUser();
+//        model.addAttribute("trips", tripService.findTripViewsByUserId(user.getId()));
+//        model.addAttribute("user", user);
+//        return "welcome";
+//    }
 
 
 

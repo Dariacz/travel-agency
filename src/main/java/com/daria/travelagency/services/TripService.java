@@ -28,10 +28,10 @@ public class TripService {
         return tripRepository.findTripViews();
     }
 
-    public List<TripView> findTripViewsByUserId(Long userId) {
-
-        return tripRepository.findTripViewsById(userId);
-    }
+//    public List<TripView> findTripViewsByUserId(Long userId) {
+//
+//        return tripRepository.findTripViewsById(userId);
+//    }
 
     public Trip createTrip(NewTrip newTrip) throws AccessDeniedException {
         var trip = new Trip();
@@ -43,6 +43,11 @@ public class TripService {
 
     public Trip findTripById(long tripId) {
         return tripRepository.findTripById(tripId);
+
+    }
+
+    public Trip findTripByArrivalCityId(Long cityId) {
+        return tripRepository.findTripByArrivalCityId(cityId);
 
     }
 

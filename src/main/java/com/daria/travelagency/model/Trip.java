@@ -50,7 +50,7 @@ public class Trip {
 
     private LocalDate startDate;
     private LocalDate endDate;
-    private Integer quantityDays;
+    private Integer daysQuantity;
 
     private double adultPrice;
     private double childPrice;
@@ -63,10 +63,11 @@ public class Trip {
     private Integer adultsQuantity;
     private Integer childrenQuantity;
 
+
     public Trip() {
     }
 
-    public Trip(City departureCity, Airport departureAirport, City arrivalCity, Airport arrivalAirport, Hotel hotel, LocalDate startDate, LocalDate endDate, Integer quantityDays, Type type, double adultPrice, double childPrice, boolean isPromoted, Integer adultsQuantity, Integer childrenQuantity) {
+    public Trip(City departureCity, Airport departureAirport, City arrivalCity, Airport arrivalAirport, Hotel hotel, LocalDate startDate, LocalDate endDate, Integer daysQuantity, Type type, double adultPrice, double childPrice, boolean isPromoted, Integer adultsQuantity, Integer childrenQuantity) {
         this.departureCity = departureCity;
         this.departureAirport = departureAirport;
         this.arrivalCity = arrivalCity;
@@ -74,7 +75,7 @@ public class Trip {
         this.hotel = hotel;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.quantityDays = quantityDays;
+        this.daysQuantity = daysQuantity;
         this.type = type;
         this.adultPrice = adultPrice;
         this.childPrice = childPrice;
@@ -178,12 +179,12 @@ public class Trip {
         this.endDate = endDate;
     }
 
-    public Integer getQuantityDays() {
-        return quantityDays;
+    public Integer getDaysQuantity() {
+        return daysQuantity;
     }
 
-    public void setQuantityDays(Integer quantityDays) {
-        this.quantityDays = quantityDays;
+    public void setDaysQuantity(Integer quantityDays) {
+        this.daysQuantity = daysQuantity;
     }
 
     public double getAdultPrice() {
@@ -246,14 +247,14 @@ public class Trip {
                 Objects.equals(hotel, trip.hotel) &&
                 Objects.equals(startDate, trip.startDate) &&
                 Objects.equals(endDate, trip.endDate) &&
-                Objects.equals(quantityDays, trip.quantityDays) &&
+                Objects.equals(daysQuantity, trip.daysQuantity) &&
                 Objects.equals(adultsQuantity, trip.adultsQuantity) &&
                 Objects.equals(childrenQuantity, trip.childrenQuantity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, createdOn, type, departureCity, departureAirport, arrivalCity, arrivalAirport, hotel, startDate, endDate, quantityDays, adultPrice, childPrice, isPromoted, adultsQuantity, childrenQuantity);
+        return Objects.hash(id, title, description, createdOn, type, departureCity, departureAirport, arrivalCity, arrivalAirport, hotel, startDate, endDate, daysQuantity, adultPrice, childPrice, isPromoted, adultsQuantity, childrenQuantity);
     }
 
     @Override
@@ -271,7 +272,7 @@ public class Trip {
                 ", hotel=" + hotel +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
-                ", quantityDays=" + quantityDays +
+                ", daysQuantity=" + daysQuantity +
                 ", adultPrice=" + adultPrice +
                 ", childPrice=" + childPrice +
                 ", isPromoted=" + isPromoted +

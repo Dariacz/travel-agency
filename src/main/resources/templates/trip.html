@@ -8,12 +8,24 @@
     <main role="main" class="inner cover">
         <div th:insert="fragments/banner.html :: div"></div>
         <div class="card text-white bg-primary mb-3" style="max-width: 50rem;">
-            <div class="card-header" th:text="${trip.title}">Tytuł</div>
+            <div class="card-header" th:text="${trip.arrivalCity.name}">Tytuł</div>
             <div class="card-body">
-                <h5 class="card-title" th:text="${trip.user.name}">Nazwa użytkownika</h5>
+                <h5 class="card-title" th:text="|Wycieczka do: ${trip.arrivalCity.name}|">Miasto</h5>
                 <p class="card-text" th:text="${trip.description}">Opis</p>
+                <p class="card-text" th:text="|Hotel: ${trip.hotel.name}|"> Hotel </p>
+                <p class="card-text" th:text="|Start: ${trip.startDate}|"> Standard </p>
+                <p class="card-text" th:text="|Ilośc dni: ${trip.daysQuantity}|"> Opis </p>
+                <p class="card-text" th:text="|Kraj: ${trip.arrivalCity.country.name}|"> Opis </p>
+                <p class="card-text" th:text="|Wylot ${trip.departureCity.name}|"> Opis </p>
+                <p class="card-text" th:text="|Lotnisko: ${trip.departureAirport.name}|"> Opis </p>
             </div>
         </div>
+
+
+
+
+
+
         <form th:action="@{/trips}" th:object="${trip}" method="delete">
             <input type="hidden" th:field="${trip}">Unuń</input>
             <button type="submit" class="btn btn-danger" onClick="return confirm('Czy jesteś pewny?')"/>

@@ -38,8 +38,12 @@ public class TripController {
     @GetMapping("/trip/{tripId}")
     public String getTripById(Model model,@PathVariable final long tripId) {
         model.addAttribute("trip", tripService.findTripById(tripId));
+        model.addAttribute("tripsbycountryid", tripService.findTripByArrivalCityId(tripId));
         return "trip";
     }
+
+
+
 
 
     @PostMapping("/new-trip")

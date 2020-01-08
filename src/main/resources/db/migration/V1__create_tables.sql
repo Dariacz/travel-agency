@@ -5,6 +5,8 @@ DROP DATABASE IF EXISTS user;
 create table trip
 (
     id                   bigint           not null auto_increment,
+    title                varchar(500),
+    description          varchar(5000),
     adult_price          double precision not null,
     adults_quantity      integer,
     child_price          double precision not null,
@@ -19,6 +21,7 @@ create table trip
     departure_airport_id bigint,
     departure_city_id    bigint,
     hotel_id             bigint,
+    created_on           datetime(6),
     primary key (id)
 );
 
@@ -48,10 +51,10 @@ create table airport
     primary key (id)
 );
 
-create table continents
+create table continent
 (
-    id       bigint          not null auto_increment,
-    continent varchar(255) not null unique,
+    id       bigint   not null auto_increment,
+    name varchar(255) not null unique,
     primary key (id)
 );
 
@@ -95,7 +98,7 @@ alter table airport
     add constraint city_fk foreign key (city_id) references city (id);
 
 alter table country
-    add constraint continent_fk2 foreign key (continent_id) references continents (id);
+    add constraint continent_fk2 foreign key (continent_id) references continent (id);
 
 alter table hotel
     add constraint city_fk2 foreign key (city_id) references city (id);
