@@ -37,6 +37,18 @@ public class TripService {
         var trip = new Trip();
         trip.setTitle(newTrip.getTitle());
         trip.setDescription(newTrip.getDescription());
+        trip.setAdultPrice(newTrip.getAdultPrice());
+        trip.setChildPrice(newTrip.getChildPrice());
+        trip.setDaysQuantity(newTrip.getDaysQuantity());
+        trip.setStartDate(newTrip.getStartDate());
+        trip.setEndDate(newTrip.getEndDate());
+        trip.setDaysQuantity(newTrip.getDaysQuantity());
+        trip.setDepartureAirport(newTrip.getDepartureAirport());
+        trip.setDepartureCity(newTrip.getDepartureCity());
+        trip.setArrivalAirport(newTrip.getArrivalAirport());
+        trip.setArrivalCity(newTrip.getArrivalCity());
+        trip.setHotel(newTrip.getHotel());
+
         return tripRepository.save(trip);
     }
 

@@ -18,6 +18,7 @@ public class Continent {
     private String name;
 
     @OneToMany(mappedBy = "continent")
+
     private List<Country> countries;
 
     public Continent() {

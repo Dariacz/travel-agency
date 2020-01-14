@@ -1,5 +1,6 @@
 package com.daria.travelagency.dto;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class TripDto {
@@ -12,10 +13,10 @@ public class TripDto {
     private Long arrivalCity;
     private Long arrivalAirport;
     private Long hotel;
-    private String startDate;
-    private String endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private Integer daysQuantity;
-    private String type;    //BB, HB, FB, AI
+    private String type;
     private double adultPrice;
     private double childPrice;
     private boolean isPromoted;
@@ -70,19 +71,19 @@ public class TripDto {
         this.hotel = hotel;
     }
 
-    public String getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
@@ -142,7 +143,7 @@ public class TripDto {
         this.childrenQuantity = childrenQuantity;
     }
 
-    public TripDto(Long id, Long departureCity, Long departureAirport, Long arrivalCity, Long arrivalAirport, Long hotel, String startDate, String endDate, Integer daysQuantity, String type, double adultPrice, double childPrice, boolean isPromoted, Integer adultsQuantity, Integer childrenQuantity) {
+    public TripDto(Long id, Long departureCity, Long departureAirport, Long arrivalCity, Long arrivalAirport, Long hotel, LocalDate startDate, LocalDate endDate, Integer daysQuantity, String type, double adultPrice, double childPrice, boolean isPromoted, Integer adultsQuantity, Integer childrenQuantity) {
         this.id = id;
         this.departureCity = departureCity;
         this.departureAirport = departureAirport;
