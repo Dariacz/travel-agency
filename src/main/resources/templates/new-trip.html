@@ -8,7 +8,7 @@
 
 
     <main role="main" class="inner cover d-flex flex-column justify-content-center">
-        <form th:object="${trip}" enctype="multipart/form-data" method="post" th:action="${'/new-trip?' + _csrf.parameterName + '=' + _csrf.token}">
+        <form th:object="${newTrip}" enctype="multipart/form-data" method="post" th:action="${'/new-trip?' + _csrf.parameterName + '=' + _csrf.token}">-->
             <div class="form-group">
                 <label for="title" th:text="#{trip.title}"></label>
                 <input th:field="*{title}" class="form-control" id="title" th:placeholder="#{trip.title}">
@@ -79,16 +79,15 @@
             <input class="form-control" type="date" name="endDate">
 
             <label th:text="#{trip.daysQuantity}"></label>
-            <input class="form-control" type="text" name="daysQuantity"><label><strong>Cena
-            dorosły</strong><br></label>
+            <input class="form-control" type="text" name="daysQuantity">
 
             <div></div>
-            <label><strong>Wyżywienie</strong><br></label>
+            <label th:text="#{trip.standard}"></label>
             <select class="form-control" name="type">
-                <optgroup label="This is a group">
-                    <option value="AI" selected="">All Inclusive</option>
-                    <option value="BB">Bed and Breakfast</option>
-                    <option value="HB">HB standard</option>
+                <optgroup label="Standard">
+                    <option value="AL" selected="">All Inclusive</option>
+                    <option value="BB">Śniadanie</option>
+                    <option value="HB">Śniadanie i obiadokolacja</option>
                 </optgroup>
             </select>
             <label th:text="#{trip.adultPrice}"></label>
@@ -97,24 +96,15 @@
             <label th:text="#{trip.childPrice}"></label>
             <input class="form-control" type="text" name="childPrice">
 
-<!--            <div class="form-check"><input class="form-check-input" type="checkbox" th:field="*{isPromoted}"-->
-<!--                                           id="isPromoted">-->
-<!--                <label class="form-check-label" for="isPromoted">Promowana</label>-->
-<!--            </div>-->
-
-            <label th:text="#{trip.childPrice}"><strong>max ilośc dorosłych</strong><br></label>
-            <input class="form-control" type="text" name="adultsQuantity">
-            <label><strong>max ilośc dzieci</strong><br></label>
-            <input class="form-control" type="text" name="childrenQuantity">
-            <div class="form-group">
-                <button class="btn btn-primary btn-block" type="submit">Send</button>
+            <div class="form-check"><input class="form-check-input" type="checkbox" th:field="*{isPromoted}"
+                                           id="isPromoted">
+                <label class="form-check-label" for="isPromoted" th:text="#{trip.isPromoted}"></label>
             </div>
 
-
-
-
-
-
+            <label th:text="#{trip.adultsQuantity}"></label>
+            <input class="form-control" type="text" name="adultsQuantity">
+            <label th:text="#{trip.childrenQuantity}"></label>
+            <input class="form-control" type="text" name="childrenQuantity">
 
 
 

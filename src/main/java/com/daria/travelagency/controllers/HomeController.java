@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.nio.file.AccessDeniedException;
+
 
 @Controller
 public class HomeController {
@@ -38,13 +38,6 @@ public class HomeController {
         model.addAttribute("error", error);
         return "login";
     }
-//    @GetMapping("/my-trips")
-//    public String getMyTrips(Model model) throws AccessDeniedException {
-//        var user = securityService.getLoggedInUser();
-//        model.addAttribute("trips", tripService.findTripViewsByUserId(user.getId()));
-//        model.addAttribute("user", user);
-//        return "welcome";
-//    }
 
 
 

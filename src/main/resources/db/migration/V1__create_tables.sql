@@ -21,7 +21,7 @@ create table trip
     departure_airport_id bigint,
     departure_city_id    bigint,
     hotel_id             bigint,
-    created_on           datetime(6),
+
     primary key (id)
 );
 

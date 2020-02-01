@@ -80,13 +80,4 @@ public class Country {
         return Objects.hash(id, name, continent, cityList);
     }
 
-    @Override
-    public String toString() {
-        return "Country{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", continent=" + continent +
-                ", cityList=" + cityList +
-                '}';
-    }
 }

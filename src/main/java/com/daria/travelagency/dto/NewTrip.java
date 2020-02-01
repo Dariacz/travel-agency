@@ -5,6 +5,7 @@ import com.daria.travelagency.model.City;
 import com.daria.travelagency.model.Hotel;
 import com.daria.travelagency.model.Type;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -25,18 +26,34 @@ public class NewTrip {
     @Size(min = 5, max = 5000)
     private String description;
 
+    private Long id;
+
+
     private City departureCity;
     private Airport departureAirport;
     private City arrivalCity;
     private Airport arrivalAirport;
     private Hotel hotel;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private String startDate;
+    private String endDate;
     private Integer daysQuantity;
     private Type type;
     private double adultPrice;
     private double childPrice;
     private boolean isPromoted;
+    private Integer adultsQuantity;
+    private Integer childrenQuantity;
+
+    public NewTrip() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -94,19 +111,19 @@ public class NewTrip {
         this.hotel = hotel;
     }
 
-    public LocalDate getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -142,12 +159,38 @@ public class NewTrip {
         this.childPrice = childPrice;
     }
 
+    public boolean getIsPromoted() {
+
+        return isPromoted;
+    }
+
+    public void setIsPromoted(boolean promoted) {
+        isPromoted = promoted;
+    }
+
+
     public boolean isPromoted() {
         return isPromoted;
     }
 
     public void setPromoted(boolean promoted) {
         isPromoted = promoted;
+    }
+
+    public Integer getAdultsQuantity() {
+        return adultsQuantity;
+    }
+
+    public void setAdultsQuantity(Integer adultsQuantity) {
+        this.adultsQuantity = adultsQuantity;
+    }
+
+    public Integer getChildrenQuantity() {
+        return childrenQuantity;
+    }
+
+    public void setChildrenQuantity(Integer childrenQuantity) {
+        this.childrenQuantity = childrenQuantity;
     }
 
     @Override
@@ -160,6 +203,7 @@ public class NewTrip {
                 isPromoted == newTrip.isPromoted &&
                 Objects.equals(title, newTrip.title) &&
                 Objects.equals(description, newTrip.description) &&
+                Objects.equals(id, newTrip.id) &&
                 Objects.equals(departureCity, newTrip.departureCity) &&
                 Objects.equals(departureAirport, newTrip.departureAirport) &&
                 Objects.equals(arrivalCity, newTrip.arrivalCity) &&
@@ -168,12 +212,14 @@ public class NewTrip {
                 Objects.equals(startDate, newTrip.startDate) &&
                 Objects.equals(endDate, newTrip.endDate) &&
                 Objects.equals(daysQuantity, newTrip.daysQuantity) &&
-                type == newTrip.type;
+                type == newTrip.type &&
+                Objects.equals(adultsQuantity, newTrip.adultsQuantity) &&
+                Objects.equals(childrenQuantity, newTrip.childrenQuantity);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, description, departureCity, departureAirport, arrivalCity, arrivalAirport, hotel, startDate, endDate, daysQuantity, type, adultPrice, childPrice, isPromoted);
+        return Objects.hash(title, description, id, departureCity, departureAirport, arrivalCity, arrivalAirport, hotel, startDate, endDate, daysQuantity, type, adultPrice, childPrice, isPromoted, adultsQuantity, childrenQuantity);
     }
 
     @Override
@@ -181,18 +227,21 @@ public class NewTrip {
         return "NewTrip{" +
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
+                ", id=" + id +
                 ", departureCity=" + departureCity +
                 ", departureAirport=" + departureAirport +
                 ", arrivalCity=" + arrivalCity +
                 ", arrivalAirport=" + arrivalAirport +
                 ", hotel=" + hotel +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
+                ", startDate='" + startDate + '\'' +
+                ", endDate='" + endDate + '\'' +
                 ", daysQuantity=" + daysQuantity +
                 ", type=" + type +
                 ", adultPrice=" + adultPrice +
                 ", childPrice=" + childPrice +
                 ", isPromoted=" + isPromoted +
+                ", adultsQuantity=" + adultsQuantity +
+                ", childrenQuantity=" + childrenQuantity +
                 '}';
     }
 }

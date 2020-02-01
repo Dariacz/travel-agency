@@ -118,16 +118,5 @@ public class City {
         return Objects.hash(id, name, country, airportList, hotelList, arrivalTripList, departureTripList);
     }
 
-    @Override
-    public String toString() {
-        return "City{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", country=" + country +
-                ", airportList=" + airportList +
-                ", hotelList=" + hotelList +
-                ", arrivalTripList=" + arrivalTripList +
-                ", departureTripList=" + departureTripList +
-                '}';
-    }
+
 }

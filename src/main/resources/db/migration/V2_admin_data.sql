@@ -43,6 +43,6 @@ VALUES ('2', 'Port lotniczy Alicante', '1');
 
 
 INSERT INTO trip
-VALUES ('1', 'Wspaniała wycieszka', 'Najlepsza wycieczka twojego życia, która odmieni twój los', '8099.99', '50', '1349.99', '35', '7', '2020-08-23', '1', '2020-12-16', 'BB', '1', '1', '2', '2', '1', '2020-01-01');
+VALUES ('1', 'Wspaniała wycieszka', 'Najlepsza wycieczka twojego życia, która odmieni twój los', '8099.99', '50', '1349.99', '35', '7', '2020-08-23', '1', '2020-12-16', 'BB', '1', '1', '2', '2', '1');
 INSERT INTO trip
-VALUES ('2', 'Niepolecana wycieczka', 'Taka sobie wycieczka, bardzo droga, dużo ludzi i gorąco', '9899.99', '30', '2499.99', '10', '12', '2020-09-29', '0', '2020-12-17', 'HB', '2', '1', '2', '1', '1', '2019-12-12');
+VALUES ('2', 'Niepolecana wycieczka', 'Taka sobie wycieczka, bardzo droga, dużo ludzi i gorąco', '9899.99', '30', '2499.99', '10', '12', '2020-09-29', '0', '2020-12-17', 'HB', '2', '1', '2', '1', '1');

@@ -26,9 +26,6 @@ public class Trip {
     @Size(min = 5, max = 5000)
     private String description;
 
-    @CreationTimestamp
-    private LocalDateTime createdOn;
-
     @NotNull
     @Enumerated(EnumType.STRING)
     private Type type;
@@ -105,14 +102,6 @@ public class Trip {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public LocalDateTime getCreatedOn() {
-        return createdOn;
-    }
-
-    public void setCreatedOn(LocalDateTime createdOn) {
-        this.createdOn = createdOn;
     }
 
     public Type getType() {
@@ -203,11 +192,11 @@ public class Trip {
         this.childPrice = childPrice;
     }
 
-    public boolean isPromoted() {
+    public boolean getIsPromoted() {
         return isPromoted;
     }
 
-    public void setPromoted(boolean promoted) {
+    public void setIsPromoted(boolean promoted) {
         isPromoted = promoted;
     }
 
@@ -238,7 +227,6 @@ public class Trip {
                 isPromoted == trip.isPromoted &&
                 Objects.equals(title, trip.title) &&
                 Objects.equals(description, trip.description) &&
-                Objects.equals(createdOn, trip.createdOn) &&
                 type == trip.type &&
                 Objects.equals(departureCity, trip.departureCity) &&
                 Objects.equals(departureAirport, trip.departureAirport) &&
@@ -254,7 +242,7 @@ public class Trip {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, createdOn, type, departureCity, departureAirport, arrivalCity, arrivalAirport, hotel, startDate, endDate, daysQuantity, adultPrice, childPrice, isPromoted, adultsQuantity, childrenQuantity);
+        return Objects.hash(id, title, description, type, departureCity, departureAirport, arrivalCity, arrivalAirport, hotel, startDate, endDate, daysQuantity, adultPrice, childPrice, isPromoted, adultsQuantity, childrenQuantity);
     }
 
     @Override
@@ -263,7 +251,6 @@ public class Trip {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", createdOn=" + createdOn +
                 ", type=" + type +
                 ", departureCity=" + departureCity +
                 ", departureAirport=" + departureAirport +

@@ -92,14 +92,5 @@ public class Airport {
         return Objects.hash(id, name, city, departureTripList, arrivalTripList);
     }
 
-    @Override
-    public String toString() {
-        return "Airport{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", city=" + city +
-                ", departureTripList=" + departureTripList +
-                ", arrivalTripList=" + arrivalTripList +
-                '}';
-    }
+
 }

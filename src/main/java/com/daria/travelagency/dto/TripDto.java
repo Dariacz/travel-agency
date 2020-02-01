@@ -23,6 +23,7 @@ public class TripDto {
     private Integer adultsQuantity;
     private Integer childrenQuantity;
 
+
     public Long getId() {
         return id;
     }

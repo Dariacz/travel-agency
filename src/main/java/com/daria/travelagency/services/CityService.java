@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class CityService {
 
@@ -24,4 +25,12 @@ public class CityService {
         return (List<City>) cityRepository.findAll();
     }
 
+    public City findCityById(long cityId) {
+        return cityRepository.findCityById(cityId);
+    }
+
+    public City findCityByName(String name) {
+
+        return cityRepository.findByName(name);
+    }
 }

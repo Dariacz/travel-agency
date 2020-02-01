@@ -68,12 +68,5 @@ public class Continent {
         return Objects.hash(id, name, countries);
     }
 
-    @Override
-    public String toString() {
-        return "Continent{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", countries=" + countries +
-                '}';
-    }
+
 }
