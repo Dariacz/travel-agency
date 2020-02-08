@@ -13,8 +13,7 @@ public class Continent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotEmpty
-    @NotNull
+
     private String name;
 
     @OneToMany(mappedBy = "continent")
@@ -22,12 +21,15 @@ public class Continent {
     private List<Country> countries;
 
     public Continent() {
+
     }
 
     public Continent(String name, List<Country> countries) {
         this.name = name;
         this.countries = countries;
     }
+
+
 
     public long getId() {
         return id;
@@ -69,4 +71,12 @@ public class Continent {
     }
 
 
+    @Override
+    public String toString() {
+        return "Continent{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", countries=" + countries +
+                '}';
+    }
 }

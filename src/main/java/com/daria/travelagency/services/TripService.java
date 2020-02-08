@@ -79,5 +79,15 @@ public class TripService {
         tripRepository.deleteById(tripId);
 
     }
+
+    public List<Trip> getAllPromotedTrips() {
+        boolean isPromoted = true;
+        return tripRepository.findByIsPromoted(true);
+    }
+
+
+    public List<TripView> findAllTripsByArrivalCityCountryContinentId(Long continentId) {
+        return tripRepository.findAllTripsByArrivalCityCountryContinentId(continentId);
+    }
 }
 

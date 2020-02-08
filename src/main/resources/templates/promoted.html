@@ -12,19 +12,14 @@
 
         <div class="list-group">
             <ul class="list-group list-group-flush">
-                <h5 class="list-title">Lista Wycieczek</h5>
-                <a  th:each="tripView: ${tripViews}"  class="list-group-item list-group-item-action"  th:text="${tripView.title}"  th:href="${'/trip/'+ tripView.id}">
-                </a>
-                <a  th:each="tripView: ${tripsbycontinentId}"  class="list-group-item list-group-item-action"  th:text="${tripView.title}"  th:href="${'/trip/'+ tripView.id}">
+                <h5 class="list-title">NAJPOPULARNIEJSZE WYCIECZKI</h5>
+                <a th:if="${trips.empty}">Brak Wycieczek</a>
+                <a  th:each="trip: ${trips}"  class="list-group-item list-group-item-action" th:text="${trip.title}"  th:href="${'/trip/'+ trip.id}" >
                 </a>
 
             </ul>
         </div>
 
-
-<div class="card" style="width: 18rem;">
-        <a class="btn btn-primary" href="/new-trip" role="button">Dodaj nową wycieczkę</a>
-</div>
 
     </main>
 </div>

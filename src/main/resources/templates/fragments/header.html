@@ -2,8 +2,8 @@
     <div class="inner">
         <nav sec:authorize="isAuthenticated()" class="nav nav-masthead justify-content-end">
             <a class="nav-link" th:text="#{navigation.trips}" th:href="@{/trips}"></a>
-            <a class="nav-link" th:text="#{navigation.continents}" th:href="@{/}"></a>
-            <a class="nav-link" th:text="#{navigation.promotion}" th:href="@{/}"></a>
+            <a class="nav-link" th:text="#{navigation.continents}" th:href="@{/continents}"></a>
+            <a class="nav-link" th:text="#{navigation.promotion}" th:href="@{/promoted}"></a>
             <a class="nav-link" th:text="#{navigation.logout}" th:href="@{/logout}"></a>
 
         </nav>

@@ -1,6 +1,7 @@
 package com.daria.travelagency.controllers;
 
 
+import com.daria.travelagency.dto.ContinentDto;
 import com.daria.travelagency.dto.NewTrip;
 import com.daria.travelagency.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,7 +77,28 @@ public class TripController {
         return "redirect:/trips_list";
     }
 
+    @GetMapping("/promoted")
+    public String getAllPromotedTrips(Model model) {
 
+        model.addAttribute("trips", tripService.getAllPromotedTrips());
+        return "promoted";
+    }
+
+    @GetMapping("/continents")
+    public String showAllContinents(Model model) {
+        model.addAttribute("continentsDto", continentService.findContinentsByName());
+        return "continents";
+    }
+
+
+   @GetMapping("/continents/{continentId}")
+    public String getAllTripsByContinent(@PathVariable("continentId") Long continentId, @org.jetbrains.annotations.NotNull Model model) {
+       model.addAttribute("continents", continentService.getAllContinentsByName());
+       model.addAttribute("countries", countryService.getAllCountriesByName());
+       model.addAttribute("tripe", tripService.findTripViews());
+        model.addAttribute("tripsbycontinentId", tripService.findAllTripsByArrivalCityCountryContinentId(continentId));
+        return "trips_list";
+    }
 
 
 }
